@@ -359,7 +359,7 @@ body {
 .vertex {
     width: 10px;
     color: blue;
-    font-size: 19px;
+    font-size: 22px;
     font-weight: 800;
     display: flex;
     align-items: center;
@@ -486,17 +486,17 @@ body {
 }
 
 .triangle .vertex:first-child p {
-    padding-bottom: 30px;
+    padding-bottom: 45px;
     rotate: -90deg;
 }
 
 .triangle .vertex:nth-child(2) p {
-    padding-bottom: 30px;
+    padding-bottom: 45px;
     rotate: 90deg;
 }
 
 .triangle .vertex:nth-child(3) p {
-    padding-top: 30px;
+    padding-top: 40px;
     rotate: -90deg;
 }
 
@@ -555,4 +555,8 @@ body {
 .keep{
  display: none;
 height: 100%;
+}
+#result{
+    display: none;
+    border: none;
 }

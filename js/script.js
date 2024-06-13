@@ -10,6 +10,21 @@ function inputSideC() {
     return document.getElementById("inputiii").value;
 
 }
+function limitNumA() {
+    let inputLength = 4
+    let length1 = $("#inputi").val()
+    return length1.length > inputLength
+}
+function limitNumB() {
+    let inputLength = 4
+    let length1 =  $("#inputii").val()
+    return length1.length > inputLength
+}
+function limitNumC() {
+    let inputLength = 4
+    let length1 =  $("#inputiii").val()
+    return length1.length > inputLength
+}
 function addSideAB() {
     let fristsd = parseInt($(".sdA").text());
     let secondsd = parseInt($(".sdB").text());
@@ -33,38 +48,63 @@ function enter() {
     let inputB = inputSideB();
     let inputC = inputSideC();
 
-    if (inputA !== "") {
+    let inputLength = 4
+    let length1 = $(".limit").val()
+
+    if (limitNumA()) {
+        $("#inputi").val(inputSideA())
+        $(".sdA").html("0");
+        $(".numa").html("0");
+
+    }
+    else if (inputA !== "") {
         $(".sdA").html(inputSideA());
-        $(".numa").html(inputSideA());
         $(".side1").hide();
         $(".side2").show();
         $(".edit1").show();
     }
-    if (inputB !== "") {
+    if (limitNumB()) {
+        $("#inputii").val(inputSideB())
+        $(".sdB").html("0");
+        $(".numb").html("0");
+
+    }
+    else if (inputB !== "") {
         $(".sdB").html(inputSideB());
-        $(".numb").html(inputSideB());
         $(".side2").hide();
         $(".side3").show();
         $(".edit2").show();
 
     }
-    if (inputC !== "") {
+    if (limitNumC()) {
+        $("#inputiii").val(inputSideC())
+        $(".sdC").html("0");
+        $(".numc").html("0");
+
+    }
+    else if (inputC !== "") {
         $(".sdC").html(inputSideC());
-        $(".numc").html(inputSideC());
         $(".side3").hide();
         $("#enter").hide();
         $(".edit3").show();
+        $("#result").show();
+
     }
-
-
 }
-
 function requirement() {
     let sda = parseInt($(".sdA").text());
     let sdb = parseInt($(".sdB").text());
     let sdc = parseInt($(".sdC").text());
+    $(".numa").html(inputSideA());
+    $(".numb").html(inputSideB());
+    $(".numc").html(inputSideC());
 
     if (addSideAB() <= sda || addSideAC() <= sdb || addSideBC() <= sdc) {
+        $(".keep1").hide();
+        $(".keep2").hide();
+        $(".keep3").hide();
+        $(".keep4").show();
+    } else  if ( sda === 0 || sdb === 0 || sdc === 0) {
         $(".keep1").hide();
         $(".keep2").hide();
         $(".keep3").hide();
@@ -89,6 +129,7 @@ function requirement() {
 
 
 window.onload = function () {
+
     $("#enter").click(function () {
         enter();
     });
@@ -116,6 +157,9 @@ window.onload = function () {
         $(".side2").hide();
         $("#enter").show();
     });
+    $(".limit").click(function () {
+        $("#enter").show();
 
+    });
 
 }

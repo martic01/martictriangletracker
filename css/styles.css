@@ -25,6 +25,27 @@ button {
 body {
     background-color: rgb(248, 245, 245);
 }
+.mn-cnt{
+
+    animation: 5s in linear forwards;
+}
+
+@keyframes in {
+
+    0% {
+        letter-spacing: 0px;
+        text-shadow: 0 0 6px rgb(15, 15, 15);
+        color: aqua;
+    }
+
+    50% {
+        letter-spacing: 5px;
+        text-shadow: 0 0 18px rgb(15, 15, 15);
+        color: aqua;
+    }
+
+}
+
 
 .prj-name {
     margin: 20px auto;
@@ -36,30 +57,51 @@ body {
 .prj-name p:first-child {
     font-size: 30px;
     font-weight: 800;
+    text-shadow: 0 0 6px rgb(15, 15, 15);
     color: aqua;
 }
 
 .prj-name p:nth-child(2) {
     font-size: 40px;
     font-weight: 800;
-    color: rgb(1, 59, 59);
+    color: white;
 
-    animation: 5s join linear forwards;
+    animation: 8s join linear infinite;
 }
 
 @keyframes join {
 
     0% {
-        letter-spacing: 0px;
-        color: aqua;
+        text-shadow: 0 0 8px rgb(19, 18, 18);
+        letter-spacing: 5px;
     }
-
+    25% {
+        text-shadow: 0 0 8px rgb(19, 18, 18);
+        letter-spacing: 5px;
+    }
     50% {
+        letter-spacing: 0px;
+        text-shadow: 0 0 6px rgb(15, 15, 15);
+        color: rgb(165, 173, 173);
+        
+    }
+    60% {
         letter-spacing: 40px;
-        color: aqua;
+        text-shadow: 0 0 18px rgb(15, 15, 15);
+        color: rgb(1, 20, 20);
+    }
+    75% {
+        letter-spacing: 40px;
+        text-shadow: 0 0 18px rgb(15, 15, 15);
+        color: rgb(1, 20, 20);
+    }
+    90% {
+        text-shadow: 0 0 8px rgb(19, 18, 18);
+        letter-spacing: 5px;
     }
 
     100% {
+        text-shadow: 0 0 8px rgb(19, 18, 18);
         letter-spacing: 5px;
     }
 }
@@ -95,7 +137,7 @@ body {
 }
 
 .input-cont button {
-    margin-top: 50px;
+    margin-top: 100px;
     width: 100px;
     height: 70%;
     font-size: 20px;
@@ -199,6 +241,13 @@ body {
 
 }
 
+.ph p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+}
+
 .input-item li span {
     color: red;
 }
@@ -206,7 +255,6 @@ body {
 .text {
     width: 68%;
     height: 95%;
-    border-radius: 20px;
     box-shadow: 0 0 10px 1px white;
     background-color: rgb(235, 225, 225);
 }
@@ -215,7 +263,6 @@ body {
 .words {
     width: 100%;
     height: 40%;
-    border-radius: 10px;
     background-color: white;
     text-align: center;
 }
@@ -342,13 +389,12 @@ body {
 .triangle {
     width: 100%;
     height: 57%;
-    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 70px;
     margin-top: 5px;
-    background-color:black;
+    background-color: black;
     /* margin-top: -20px; */
 }
 
@@ -542,21 +588,87 @@ body {
 .keep4 {
     display: none;
 } */
-.edit{
+.edit {
     font-size: 12px;
     display: none;
 }
-.edit:hover{
+
+.edit:hover {
     font-size: 15px;
     color: blue;
     border-bottom: 2px solid red;
-  
+
 }
-.keep{
- display: none;
-height: 100%;
+
+.keep {
+    display: none;
+    height: 100%;
 }
-#result{
+
+#result {
     display: none;
     border: none;
+}
+
+#alert {
+    background-color: black;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 60px;
+    opacity: 0;
+    display: none;
+
+
+    animation: 2s showin linear forwards;
+}
+
+#alert:hover p{
+    transition: 0.5s ease-in-out;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px -1px black;
+    color: black;
+}
+
+@keyframes showin {
+    0% {
+        margin-bottom: -110px;
+        opacity: 0;
+    }
+
+    25% {
+        margin-bottom: -90px;
+        opacity: 1;
+    }
+
+    50% {
+        margin-bottom: -90px;
+        opacity: 1;
+    }
+
+    75% {
+        margin-bottom: -90px;
+        opacity: 1;
+    }
+
+    100% {
+        margin-bottom: -110px;
+        opacity: 0;
+    }
+}
+
+#alert p {
+    font-size: 16px;
+    color: white;
+    line-height: 20px;
+    font-weight: 800;
+}
+
+#alert p span {
+    font-size: 21px;
+    font-weight: 800;
+    color: red;
 }

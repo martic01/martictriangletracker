@@ -15,14 +15,38 @@ function limitNumA() {
     let length1 = $("#inputi").val()
     return length1.length > inputLength
 }
+function textLength() {
+    let long = $("#inputi").val()
+    let realLength = long.length
+    return $(".uslength").html(realLength)
+}
+function textLength2() {
+    let long = $("#inputii").val()
+    let realLength = long.length
+    return $(".uslength").html(realLength)
+}
+function textLength3() {
+    let long = $("#inputiii").val()
+    let realLength = long.length
+    return $(".uslength").html(realLength)
+}
+
+function PromtTimer() {
+    let alert = document.getElementById("alert");
+    alert.style.display = "block"
+    setTimeout(function () {
+        alert.style.display = "none";
+    }, 2000);
+}
+
 function limitNumB() {
     let inputLength = 4
-    let length1 =  $("#inputii").val()
+    let length1 = $("#inputii").val()
     return length1.length > inputLength
 }
 function limitNumC() {
     let inputLength = 4
-    let length1 =  $("#inputiii").val()
+    let length1 = $("#inputiii").val()
     return length1.length > inputLength
 }
 function addSideAB() {
@@ -48,14 +72,15 @@ function enter() {
     let inputB = inputSideB();
     let inputC = inputSideC();
 
-    let inputLength = 4
-    let length1 = $(".limit").val()
+    // let inputLength = 4
+    // let length1 = $(".limit").val()
 
     if (limitNumA()) {
         $("#inputi").val(inputSideA())
         $(".sdA").html("0");
         $(".numa").html("0");
-
+        PromtTimer()
+        textLength()
     }
     else if (inputA !== "") {
         $(".sdA").html(inputSideA());
@@ -67,7 +92,8 @@ function enter() {
         $("#inputii").val(inputSideB())
         $(".sdB").html("0");
         $(".numb").html("0");
-
+        PromtTimer()
+        textLength2()
     }
     else if (inputB !== "") {
         $(".sdB").html(inputSideB());
@@ -80,7 +106,8 @@ function enter() {
         $("#inputiii").val(inputSideC())
         $(".sdC").html("0");
         $(".numc").html("0");
-
+        PromtTimer()
+        textLength3()
     }
     else if (inputC !== "") {
         $(".sdC").html(inputSideC());
@@ -104,7 +131,7 @@ function requirement() {
         $(".keep2").hide();
         $(".keep3").hide();
         $(".keep4").show();
-    } else  if ( sda === 0 || sdb === 0 || sdc === 0) {
+    } else if (sda === 0 || sdb === 0 || sdc === 0) {
         $(".keep1").hide();
         $(".keep2").hide();
         $(".keep3").hide();

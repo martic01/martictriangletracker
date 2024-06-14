@@ -54,7 +54,7 @@
 ```bash
 # Repository Address
 
-git clone https://github.com/martic001/MarticTriangleTracker.git
+git clone https://github.com/martic01/MarticTriangleTracker.git
 ```
 ### Navigate to top directory
 ```bash

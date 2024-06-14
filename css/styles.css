@@ -48,7 +48,7 @@ body {
 
 
 .prj-name {
-    margin: 20px auto;
+    margin: 500px auto;
     width: 1200px;
     height: 100px;
     text-align: center;
@@ -112,7 +112,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 20px;
-    margin: 100px auto;
+    margin: 400px auto;
     width: 1200px;
     height: 550px;
     border-radius: 10px;

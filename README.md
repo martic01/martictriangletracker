@@ -79,10 +79,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
+* Phone no 
 ```bash
-
-* Phone no : 09125701625
-
-     *   GMAIL    *
+ 09125701625
 ```
+* GMAIL 
+
  aboyadematthew2@gmail.com

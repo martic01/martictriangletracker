@@ -49,10 +49,10 @@
 ## Installation
 
 ### Clone to system
+
+* open git bash and paste this link
 ```bash
 # Repository Address
-
-open git bash and paste this link
 
 git clone https://github.com/martic001/MarticTriangleTraker.git
 ```

@@ -13,11 +13,6 @@
 - [License](#license)
 - [Contact](#contact)
 
-
-
-
-
-
 ## Technologies
 ```bash
 * GIT
@@ -44,6 +39,13 @@
 * Responsive Design: User-friendly interface that works on both desktop and mobile browsers.
 * Validation: Ensures that the inputs provided can form a valid triangle.
 
+## Table of Contents
+
+- [Technologies](#technologies)
+- [Description](#description)
+- [Usage](#usage)
+- [License](#license)
+- [Contact](#contact)
 
 ## Installation
 

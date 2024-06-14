@@ -60,7 +60,7 @@ git clone https://github.com/martic01/MarticTriangleTracker.git
 ```bash
 # Project Name
 
-cd TriangleTracker
+cd MarticTriangleTracker
 
 ```
 ### Open the application

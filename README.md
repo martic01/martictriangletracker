@@ -43,7 +43,6 @@
 
 - [Technologies](#technologies)
 - [Description](#description)
-- [Usage](#usage)
 - [License](#license)
 - [Contact](#contact)
 

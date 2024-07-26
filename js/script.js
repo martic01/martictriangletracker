@@ -10,11 +10,7 @@ function inputSideC() {
     return document.getElementById("inputiii").value;
 
 }
-function limitNumA() {
-    let inputLength = 4
-    let length1 = $("#inputi").val()
-    return length1.length > inputLength
-}
+
 function textLength() {
     let long = $("#inputi").val()
     let realLength = long.length
@@ -38,16 +34,47 @@ function PromtTimer() {
         alert.style.display = "none";
     }, 2000);
 }
+function limitNumA() {
+    let inputLength = 4
+    let length1 = $("#inputi").val()
+    let rule = length1.length > inputLength
 
+    if (rule) {
+        $("#inputi").val(inputSideC().slice(0, 4))
+        $(".sdC").html("0");
+        $(".numc").html("0");
+        PromtTimer()
+        textLength3()
+    }
+
+}
 function limitNumB() {
     let inputLength = 4
     let length1 = $("#inputii").val()
-    return length1.length > inputLength
+    let rule = length1.length > inputLength
+
+    if (rule) {
+        $("#inputii").val(inputSideB().slice(0, 4))
+        $(".sdB").html("0");
+        $(".numb").html("0");
+        PromtTimer()
+        textLength2()
+    }
+
 }
 function limitNumC() {
     let inputLength = 4
     let length1 = $("#inputiii").val()
-    return length1.length > inputLength
+    let rule = length1.length > inputLength
+
+    if (rule) {
+        $("#inputiii").val(inputSideC().slice(0, 4))
+        $(".sdC").html("0");
+        $(".numc").html("0");
+        PromtTimer()
+        textLength3()
+    }
+  
 }
 function addSideAB() {
     let fristsd = parseInt($(".sdA").text());
@@ -68,48 +95,27 @@ function addSideBC() {
 
 
 function enter() {
-    let inputA = inputSideA();
-    let inputB = inputSideB();
-    let inputC = inputSideC();
+    limitNumA()
+    limitNumB()
+    limitNumC()
+    inputA = $("#inputi").val();
+    inputB = $("#inputii").val();
+    inputC = $("#inputiii").val();
 
-    // let inputLength = 4
-    // let length1 = $(".limit").val()
-
-    if (limitNumA()) {
-        $("#inputi").val(inputSideA())
-        $(".sdA").html("0");
-        $(".numa").html("0");
-        PromtTimer()
-        textLength()
-    }
-    else if (inputA !== "") {
+    if (inputA !== "") {
         $(".sdA").html(inputSideA());
         $(".side1").hide();
         $(".side2").show();
         $(".edit1").show();
     }
-    if (limitNumB()) {
-        $("#inputii").val(inputSideB())
-        $(".sdB").html("0");
-        $(".numb").html("0");
-        PromtTimer()
-        textLength2()
-    }
-    else if (inputB !== "") {
+     if (inputB !== "") {
         $(".sdB").html(inputSideB());
         $(".side2").hide();
         $(".side3").show();
         $(".edit2").show();
 
     }
-    if (limitNumC()) {
-        $("#inputiii").val(inputSideC())
-        $(".sdC").html("0");
-        $(".numc").html("0");
-        PromtTimer()
-        textLength3()
-    }
-    else if (inputC !== "") {
+     if (inputC !== "") {
         $(".sdC").html(inputSideC());
         $(".side3").hide();
         $("#enter").hide();
@@ -117,6 +123,7 @@ function enter() {
         $("#result").show();
 
     }
+
 }
 function requirement() {
     let sda = parseInt($(".sdA").text());
@@ -186,7 +193,20 @@ window.onload = function () {
     });
     $(".limit").click(function () {
         $("#enter").show();
+    });
+    $(".limit").on('input', function () {
+        let inputLength = 4
+        let length1 = $(this).val()
+        let rule = length1.length > inputLength
+    
+        if (rule) {
+            $(this).val(length1.slice(0, inputLength));
+            PromtTimer()
+            textLength()
+        }
 
     });
+
+
 
 }
